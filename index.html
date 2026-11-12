@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b78">
+  <meta name="description" content="Portal de la Unidad de Apoyo a la Docencia e Investigación del Hospital San José de Chincha.">
+  <title>UADI | Hospital San José de Chincha</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+  <div class="page-progress" aria-hidden="true"><span id="pageProgressBar"></span></div>
+  <header class="header header-home">
+    <div class="logos">
+      <img
+        src="imagenes/logo-hospital.png"
+        alt="Hospital San José de Chincha"
+        class="logo-hospital"
+      >
+      <span class="header-hospital-name">Hospital San José<br><small>Chincha</small></span>
+      <span class="header-brand-divider" aria-hidden="true"></span>
+      <img
+        src="imagenes/logo-uadi.png"
+        alt="Unidad de Apoyo a la Docencia e Investigación"
+        class="logo-uadi"
+      >
+    </div>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="menuPrincipal"
+      aria-label="Abrir menú"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <nav class="menu" id="menuPrincipal" aria-label="Navegación principal">
+      <a href="#inicio" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8M5 10v10h14V10M9 20v-6h6v6"/></svg>Inicio</a>
+      <a href="paginas/conocenos.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5c3.5-1.2 6.5-.5 9 1.5v13c-2.5-2-5.5-2.7-9-1.5v-13ZM21 5.5c-3.5-1.2-6.5-.5-9 1.5v13c2.5-2 5.5-2.7 9-1.5v-13Z"/></svg>Nosotros</a>
+      <a href="#areas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 8 10-5 10 5-10 5L2 8ZM5 10v6c4.5 3 9.5 3 14 0v-6M22 8v7"/></svg>Docencia</a>
+      <a href="paginas/tesis-investigacion.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M10.5 7v7M7 10.5h7"/></svg>Investigación</a>
+      <a href="#noticias"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 14h3M8 17h7"/></svg>Eventos</a>
+      <a href="#contacto"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 7 9-7"/></svg>Contacto</a>
+    </nav>
+
+  </header>
+
+  <main id="contenido-principal" tabindex="-1">
+    <section class="hero" id="inicio">
+      <div class="hero-text">
+        <span class="hero-kicker">
+          <span class="hero-kicker-dot" aria-hidden="true"></span>
+          <span id="heroBadge">UNIDAD DE APOYO A LA</span>
+        </span>
+
+        <h1 id="heroTitle">
+          <span class="hero-title-main">Docencia e</span>
+          <span class="hero-title-accent">Investigación</span>
+          <small>UADI</small>
+        </h1>
+
+        <div class="hero-location">
+          <span aria-hidden="true">✚</span>
+          <strong>Hospital San José de Chincha</strong>
+        </div>
+
+        <p id="heroSubtitle">
+          Impulsando la formación, la investigación y el conocimiento al servicio de la salud.
+        </p>
+
+        <div class="hero-quick-links" aria-label="Áreas de UADI">
+          <a href="paginas/conocenos.html">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="m4 16 20-10 20 10-20 10L4 16Z"/><path d="M12 21v11c7 6 17 6 24 0V21M44 16v15"/><path d="M19 18h10"/></svg><strong>Formación</strong><small>de profesionales</small>
+          </a>
+          <a href="paginas/tesis-investigacion.html">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="m18 7 12 5-9 19-12-5 9-19Z"/><path d="m17 11 11 5M12 24l12 5M25 30l10 8M34 37c8 0 11 4 10 8M9 37h27M6 44h40"/><path d="M13 33a10 10 0 0 1 11-5"/></svg><strong>Investigación</strong><small>en salud</small>
+          </a>
+          <a href="paginas/practicas.html">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="17" cy="13" r="6"/><circle cx="32" cy="13" r="6"/><path d="M5 37v-4c0-7 5-11 12-11 4 0 7 1 9 4M24 31h19M35 22v18M29 28l6-6 6 6"/></svg><strong>Prácticas</strong><small>y rotaciones</small>
+          </a>
+          <a href="#noticias">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="10" width="34" height="32" rx="5"/><path d="M15 6v9M33 6v9M7 19h34M24 25l2.4 5 5.6.8-4 3.8.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.8 5.6-.8L24 25Z"/></svg><strong>Eventos</strong><small>académicos</small>
+          </a>
+        </div>
+
+        <a class="hero-cta" href="paginas/conocenos.html">
+          Conoce más
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div
+        class="hero-image hero-carousel"
+        id="heroCarousel"
+        aria-roledescription="carrusel"
+      >
+        <img
+          id="heroSlideImage"
+          src="imagenes/hospital-web.jpg"
+          alt="Hospital San José de Chincha"
+          fetchpriority="high"
+        >
+
+        <div class="hero-photo-label">
+          <span aria-hidden="true">✦</span>
+          <span>Conocimiento al servicio de la salud</span>
+        </div>
+
+        <div class="hero-frase" aria-live="polite">
+          <strong id="heroSlideTitle">
+            Docencia · Investigación · Servicio
+          </strong>
+          <small id="heroSlideBody">
+            Para la comunidad de Chincha
+          </small>
+        </div>
+
+        <span class="hero-image-index" aria-hidden="true">UADI <span>·</span> 01</span>
+
+        <div class="hero-study-art" aria-hidden="true">
+          <svg viewBox="0 0 220 150" role="presentation">
+            <path d="M19 100h115l27 25H46L19 100Z" fill="#fff" stroke="#1476cb" stroke-width="5" stroke-linejoin="round" />
+            <path d="M26 89h111l25 25H51L26 89Z" fill="#f6c7d7" stroke="#1476cb" stroke-width="5" stroke-linejoin="round" />
+            <path d="M34 77h104l25 25H59L34 77Z" fill="#fff" stroke="#1476cb" stroke-width="5" stroke-linejoin="round" />
+            <path d="M60 78V52h50v26" fill="#e8f8ff" stroke="#1476cb" stroke-width="5" stroke-linejoin="round" />
+            <path d="M84 61h4M75 70h22" stroke="#22a3d6" stroke-width="5" stroke-linecap="round" />
+            <path d="M158 32h42v69h-42z" fill="#fff" stroke="#1476cb" stroke-width="5" stroke-linejoin="round" />
+            <path d="m168 49 5 5 8-10M168 70l5 5 8-10M187 50h7M187 71h7" fill="none" stroke="#15a7d2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="147" cy="97" r="20" fill="#dff7ff" stroke="#1476cb" stroke-width="5" />
+            <path d="m162 112 17 17" stroke="#1476cb" stroke-width="7" stroke-linecap="round" />
+            <path d="m36 39 7-18 15 6-7 18M48 45l-9 22c-3 8 3 16 11 16h11" fill="none" stroke="#1476cb" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+
+        <button
+          class="carousel-control carousel-prev"
+          type="button"
+          aria-label="Imagen anterior"
+        >‹</button>
+
+        <button
+          class="carousel-control carousel-next"
+          type="button"
+          aria-label="Imagen siguiente"
+        >›</button>
+
+        <div
+          class="carousel-dots"
+          id="heroSlideDots"
+          aria-label="Seleccionar imagen"
+        ></div>
+      </div>
+      <svg class="hero-wave-art" viewBox="0 0 1600 150" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="#d9f2ff" d="M0 45C235 104 428 73 650 79c263 7 367 74 609 56 119-9 225-45 341-78v93H0Z"/>
+        <path fill="#42b6ef" d="M0 93c220-69 426-38 623-11 250 35 430 83 664 41 121-22 208-63 313-77v104H0Z"/>
+        <path fill="#087bd5" d="M0 127c195-57 374-36 563-13 245 30 454 45 664 14 146-22 247-69 373-70v92H0Z"/>
+      </svg>
+    </section>
+
+    <section class="uadi-about" id="uadi">
+      <div class="about-teaser-copy" data-reveal>
+        <span class="about-teaser-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20V8l7-5 7 5v12M9 20v-7h6v7M9 9h.01M15 9h.01"/></svg> CONÓCENOS</span>
+        <h2>¿Qué es <span>UADI?</span></h2>
+        <p>
+          Somos la Unidad de Apoyo a la Docencia e Investigación del Hospital
+          San José de Chincha. Aquí compartimos información institucional y
+          orientación sobre formación e investigación en salud.
+        </p>
+        <a class="about-teaser-cta" href="/paginas/conocenos.html">Conoce más sobre UADI <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="about-teaser-visual" data-reveal>
+        <div class="about-teaser-orbit" aria-hidden="true"></div>
+        <img src="imagenes/hospital-web.jpg" alt="Hospital San José de Chincha" loading="lazy">
+        <div class="about-teaser-art" aria-hidden="true">
+          <svg viewBox="0 0 180 125" role="presentation">
+            <path d="M13 82h91l22 20H34L13 82Z" fill="#fff" stroke="#1476cb" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M20 72h90l22 20H42L20 72Z" fill="#dff4ff" stroke="#1476cb" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M28 62h88l22 20H50L28 62Z" fill="#fff" stroke="#1476cb" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M53 63V43h43v20" fill="#eaf8ff" stroke="#1476cb" stroke-width="4"/>
+            <path d="M73 48v11M67 54h12" stroke="#1a9ed4" stroke-width="4" stroke-linecap="round"/>
+            <path d="m108 38 16 6-10 26-16-6 10-26ZM109 43l13 5M100 62l16 6M117 68l18 9M131 76c8 1 13 7 13 14M105 91h48M101 101h55" fill="#fff" stroke="#146daf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="m32 42 3-9 8 2-3 8M38 44l-5 13c-2 5 2 10 7 10" fill="none" stroke="#146daf" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="about-teaser-cards" aria-label="Áreas de UADI">
+        <article class="about-teaser-card" data-reveal>
+          <span class="about-teaser-icon about-icon-docencia" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="m4 16 20-10 20 10-20 10L4 16Z"/><path d="M12 21v11c7 6 17 6 24 0V21M44 16v15"/></svg></span>
+          <span class="about-teaser-card-copy"><strong>Docencia</strong><small>Formación académica en salud.</small></span>
+        </article>
+        <article class="about-teaser-card" data-reveal>
+          <span class="about-teaser-icon about-icon-investigacion" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="m18 7 12 5-9 19-12-5 9-19Z"/><path d="m17 11 11 5M12 24l12 5M25 30l10 8M34 37c8 0 11 4 10 8M9 37h27M6 44h40"/></svg></span>
+          <span class="about-teaser-card-copy"><strong>Investigación</strong><small>Tesis y conocimiento científico.</small></span>
+        </article>
+        <article class="about-teaser-card" data-reveal>
+          <span class="about-teaser-icon about-icon-formacion" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="17" cy="13" r="6"/><circle cx="32" cy="13" r="6"/><path d="M5 37v-4c0-7 5-11 12-11 4 0 7 1 9 4M24 31h19M35 22v18M29 28l6-6 6 6"/></svg></span>
+          <span class="about-teaser-card-copy"><strong>Formación</strong><small>Prácticas y rotaciones.</small></span>
+        </article>
+      </div>
+    </section>
+
+    <section class="accesos" id="estudiantes">
+      <div class="access-heading">
+        <div class="access-heading-hospital" aria-hidden="true">
+          <img src="imagenes/hospital-web.jpg" alt="" loading="lazy">
+        </div>
+        <div class="section-title">
+          <span class="section-eyebrow" id="areas">ÁREAS DE UADI</span>
+          <h2>Explora nuestras <em>áreas</em></h2>
+          <p>Encuentra rápidamente los requisitos, formatos y procesos que necesitas.</p>
+          <span class="access-heading-swoosh" aria-hidden="true"></span>
+        </div>
+        <div class="access-heading-art" aria-hidden="true">
+          <svg viewBox="0 0 220 170" role="presentation">
+            <path d="M29 105h120l34 29H63l-34-29Z" fill="#fff" stroke="#1378ce" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M39 87h116l32 28H71L39 87Z" fill="#dff4ff" stroke="#1378ce" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M52 69h107l29 27H81L52 69Z" fill="#fff" stroke="#1378ce" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M47 65 100 48l54 17-54 18-53-18Z" fill="#173d75" stroke="#0c2d62" stroke-width="4" stroke-linejoin="round"/>
+            <path d="m100 49 49 15" fill="none" stroke="#ffb624" stroke-width="5" stroke-linecap="round"/>
+            <path d="M148 64v29c0 8-7 14-14 18" fill="none" stroke="#ffb624" stroke-width="4" stroke-linecap="round"/>
+            <path d="M164 125c9-2 15 2 14 9-1 5-5 8-12 8" fill="none" stroke="#153b70" stroke-width="6" stroke-linecap="round"/>
+            <path d="M166 124c8-15 19-18 24-10 4 6 1 12-7 16" fill="none" stroke="#153b70" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="170" cy="145" r="7" fill="#d9f2ff" stroke="#153b70" stroke-width="4"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="access-grid">
+        <article class="access-card access-practicas" data-reveal>
+          <div class="access-icon" aria-hidden="true"><img class="access-art-image" src="imagenes/uadi-area-practicas-web.png" alt="" loading="lazy"></div>
+          <h3>Prácticas <span>Preprofesionales</span></h3>
+          <p>Requisitos, documentos y orientación para estudiantes.</p>
+          <a href="paginas/practicas.html">Ver información <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="access-card access-internado" data-reveal>
+          <div class="access-icon" aria-hidden="true"><img class="access-art-image" src="imagenes/uadi-area-internado-web.png" alt="" loading="lazy"></div>
+          <h3>Internado</h3>
+          <p>Requisitos, documentos y orientación para estudiantes.</p>
+          <a href="paginas/internado.html">Ver información <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="access-card access-investigacion" data-reveal>
+          <div class="access-icon" aria-hidden="true"><img class="access-art-image" src="imagenes/uadi-area-investigacion-web.png" alt="" loading="lazy"></div>
+          <h3>Tesis e <span>Investigación</span></h3>
+          <p>Lineamientos, formatos y requisitos.</p>
+          <a href="paginas/tesis-investigacion.html">Ver información <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="access-card access-cursos" data-reveal>
+          <div class="access-icon" aria-hidden="true"><img class="access-art-image" src="imagenes/uadi-area-cursos-web.png" alt="" loading="lazy"></div>
+          <h3>Diplomados <span>y Cursos</span></h3>
+          <p>Conoce nuestra oferta académica.</p>
+          <a href="paginas/cursos-diplomados.html">Ver información <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="access-card access-constancias" data-reveal>
+          <div class="access-icon" aria-hidden="true"><img class="access-art-image" src="imagenes/uadi-area-constancias-web.png" alt="" loading="lazy"></div>
+          <h3>Constancias <span>y Certificados</span></h3>
+          <p>Consulta requisitos y documentos informativos.</p>
+          <a href="paginas/constancias.html">Ver información <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="access-card access-pensiones" data-reveal>
+          <div class="access-icon" aria-hidden="true"><img class="access-art-image" src="imagenes/uadi-area-pensiones-web.png" alt="" loading="lazy"></div>
+          <h3>Recategorización <span>de Pensiones</span></h3>
+          <p>Información y documentación necesaria.</p>
+          <a href="paginas/recategorizacion-pensiones.html">Ver información <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="access-card access-residentado" data-reveal>
+          <div class="access-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M21 9v23c0 8 5 13 12 13s12-5 12-13V20a8 8 0 0 0-16 0v13a4 4 0 0 0 8 0V23"/><path d="M45 45c0 7 5 11 11 11M21 9a4 4 0 1 1-8 0 4 4 0 0 1 8 0Zm28 11a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/><circle cx="56" cy="56" r="3"/></svg>
+          </div>
+          <h3>Residentado <span>Médico</span></h3>
+          <p>Documentos de ingreso al Hospital San José de Chincha.</p>
+          <a href="paginas/residentado.html">Ver información <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="noticias" id="noticias" data-reveal>
+      <div class="news-hero">
+        <div class="news-hospital" aria-hidden="true">
+          <img src="imagenes/hospital-web.jpg" alt="" loading="lazy">
+        </div>
+        <div class="section-title">
+          <span class="section-eyebrow"><span class="news-badge-icon" aria-hidden="true">▤</span> NOTICIAS Y EVENTOS</span>
+          <h2>Novedades de <em>UADI</em></h2>
+          <p>Mantente informado sobre las últimas noticias, actividades académicas, convocatorias y eventos relacionados con la docencia e investigación en salud.</p>
+          <span class="news-heading-swoosh" aria-hidden="true"></span>
+        </div>
+        <div class="news-hero-art" aria-hidden="true">
+          <svg viewBox="0 0 190 170" role="presentation">
+            <rect x="30" y="23" width="112" height="122" rx="18" fill="#f8fdff" stroke="#0b80d8" stroke-width="8"/>
+            <path d="M57 17v22M116 17v22" stroke="#123c78" stroke-width="10" stroke-linecap="round"/>
+            <path d="M42 61h87M51 76h18m20 0h18M51 94h18m20 0h18M51 112h18m20 0h18" stroke="#8dbde9" stroke-width="10" stroke-linecap="round"/>
+            <path d="M151 92c0-15 10-25 21-25s18 10 18 25v14l8 10h-52l7-10V92Z" fill="#ffca43" stroke="#e6a911" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M163 127c1 8 14 9 17 0" fill="none" stroke="#e6a911" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="20" cy="60" r="4" fill="#19b6e8"/><circle cx="16" cy="83" r="3" fill="#19b6e8"/><circle cx="161" cy="33" r="4" fill="#19b6e8"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="news-toolbar">
+        <div class="news-filters" role="group" aria-label="Filtrar noticias por categoría">
+          <button class="news-filter is-active" type="button" data-news-filter="all" aria-pressed="true"><span aria-hidden="true">⚑</span> Todas</button>
+          <button class="news-filter" type="button" data-news-filter="academicas" aria-pressed="false"><span aria-hidden="true">◇</span> Académicas</button>
+          <button class="news-filter" type="button" data-news-filter="investigacion" aria-pressed="false"><span aria-hidden="true">⌕</span> Investigación</button>
+          <button class="news-filter" type="button" data-news-filter="capacitaciones" aria-pressed="false"><span aria-hidden="true">♧</span> Capacitaciones</button>
+          <button class="news-filter" type="button" data-news-filter="eventos" aria-pressed="false"><span aria-hidden="true">▦</span> Eventos</button>
+        </div>
+        <div class="news-carousel-controls" aria-label="Controles de noticias">
+          <button type="button" class="news-control" data-news-direction="prev" aria-label="Noticias anteriores">‹</button>
+          <button type="button" class="news-control" data-news-direction="next" aria-label="Noticias siguientes">›</button>
+        </div>
+      </div>
+      <p class="news-filter-status" id="newsFilterStatus" role="status" aria-live="polite"></p>
+
+      <div class="news-grid news-track" id="newsGrid" aria-live="polite" tabindex="0" aria-label="Noticias de UADI">
+        <article class="news-card news-empty-state" data-news-category="all">
+          <img class="news-image" src="imagenes/hospital-web.jpg" alt="" loading="lazy">
+          <span class="news-category">UADI</span>
+          <h3>Noticias institucionales</h3>
+          <p>Las novedades publicadas por UADI aparecerán en esta sección.</p>
+        </article>
+      </div>
+      <button class="news-more-button" type="button" data-news-expand aria-expanded="false"><span aria-hidden="true">▦</span> Ver todas las noticias y eventos <b aria-hidden="true">→</b></button>
+    </section>
+
+    <section class="galeria" id="galeria" data-reveal>
+      <div class="gallery-hero">
+        <div class="gallery-hospital" aria-hidden="true">
+          <img src="imagenes/hospital-web.jpg" alt="" loading="lazy">
+        </div>
+        <div class="section-title">
+          <span class="section-eyebrow"><span class="gallery-badge-icon" aria-hidden="true">▧</span> GALERÍA INSTITUCIONAL</span>
+          <h2>Nuestra <em>Galería</em></h2>
+          <p>Revive los principales momentos, actividades académicas y eventos organizados por la UADI.</p>
+          <span class="gallery-heading-swoosh" aria-hidden="true"></span>
+        </div>
+        <div class="gallery-hero-art" aria-hidden="true">
+          <svg viewBox="0 0 190 160" role="presentation">
+            <g transform="rotate(-12 63 78)"><rect x="18" y="24" width="83" height="91" rx="12" fill="#dff7ff" stroke="#fff" stroke-width="8"/><rect x="28" y="34" width="63" height="70" rx="5" fill="#76d5ed"/><path d="m34 92 19-20 12 11 13-18 13 35H34Z" fill="#61bf85"/><circle cx="72" cy="49" r="7" fill="#ffdb4d"/></g>
+            <g transform="rotate(9 125 66)"><rect x="93" y="14" width="78" height="93" rx="12" fill="#f8fdff" stroke="#fff" stroke-width="7"/><rect x="102" y="23" width="60" height="75" rx="6" fill="#55bde5"/><path d="m106 87 20-22 12 11 11-16 10 27h-53Z" fill="#85cc77"/><circle cx="133" cy="39" r="8" fill="#ffda45"/></g>
+            <rect x="41" y="81" width="111" height="61" rx="15" fill="#087bd7" stroke="#fff" stroke-width="6"/>
+            <rect x="57" y="70" width="41" height="16" rx="6" fill="#087bd7"/>
+            <circle cx="96" cy="110" r="24" fill="#0b4e9d" stroke="#d9f7ff" stroke-width="6"/><circle cx="96" cy="110" r="14" fill="#21b7e8"/>
+            <circle cx="135" cy="96" r="5" fill="#ffda45"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="gallery-toolbar">
+        <div class="gallery-filters" role="group" aria-label="Filtrar fotos por categoría">
+          <button class="gallery-filter is-active" type="button" data-gallery-filter="all" aria-pressed="true"><span aria-hidden="true">▦</span> Todas</button>
+          <button class="gallery-filter" type="button" data-gallery-filter="docencia" aria-pressed="false"><span aria-hidden="true">◇</span> Docencia</button>
+          <button class="gallery-filter" type="button" data-gallery-filter="investigacion" aria-pressed="false"><span aria-hidden="true">⌕</span> Investigación</button>
+          <button class="gallery-filter" type="button" data-gallery-filter="capacitaciones" aria-pressed="false"><span aria-hidden="true">♧</span> Capacitaciones</button>
+          <button class="gallery-filter" type="button" data-gallery-filter="eventos" aria-pressed="false"><span aria-hidden="true">▦</span> Eventos</button>
+        </div>
+      </div>
+      <p class="gallery-filter-status" id="galleryFilterStatus" role="status" aria-live="polite"></p>
+
+      <div class="gallery-bento" id="galleryGrid" aria-label="Fotos institucionales">
+        <figure class="gallery-card gallery-featured" data-gallery-category="hospital">
+          <img src="imagenes/hospital-web.jpg" alt="Vista del Hospital San José de Chincha" loading="lazy">
+          <figcaption><span aria-hidden="true">◇</span> Hospital San José de Chincha</figcaption>
+        </figure>
+        <div class="gallery-coming-soon" aria-hidden="true"><span>▧</span><strong>Próximas fotos</strong></div>
+        <div class="gallery-coming-soon" aria-hidden="true"><span>♧</span><strong>Actividades UADI</strong></div>
+        <div class="gallery-coming-soon" aria-hidden="true"><span>◇</span><strong>Docencia e investigación</strong></div>
+        <div class="gallery-coming-soon" aria-hidden="true"><span>▦</span><strong>Eventos académicos</strong></div>
+      </div>
+      <button class="gallery-more-button" type="button" data-gallery-expand aria-expanded="false" hidden><span aria-hidden="true">▧</span> Ver más fotos de la galería <b aria-hidden="true">→</b></button>
+    </section>
+
+    <section class="contacto" id="contacto" data-reveal>
+      <div class="contact-hero">
+        <div class="contact-hospital" aria-hidden="true">
+          <img src="imagenes/hospital-web.jpg" alt="" loading="lazy">
+        </div>
+        <div class="section-title">
+          <span class="section-eyebrow"><span class="contact-badge-icon" aria-hidden="true">⌕</span> CONTACTO</span>
+          <h2>Comunícate con <em>UADI</em></h2>
+          <p>Conoce nuestros canales oficiales de atención y ubícanos fácilmente.</p>
+          <span class="contact-heading-swoosh" aria-hidden="true"></span>
+        </div>
+        <div class="contact-hero-art" aria-hidden="true">
+          <svg viewBox="0 0 190 160" role="presentation">
+            <path d="M24 36c0-18 15-31 34-31h47c19 0 34 13 34 31v39c0 18-15 32-34 32H67l-28 20 5-27C31 93 24 84 24 75V36Z" fill="#08a7e5" stroke="#fff" stroke-width="7"/>
+            <path d="M57 28c-7 1-12 8-10 15 6 23 22 39 44 46 8 2 15-4 16-11l1-7-19-9-7 9c-8-4-15-11-19-20l8-7-9-18-5 2Z" fill="#fff"/>
+            <path d="M98 84c0-16 13-28 29-28h30c15 0 27 12 27 28v27c0 15-12 27-27 27h-13l-20 15 3-19c-17-2-29-14-29-30V84Z" fill="#087bd7" stroke="#fff" stroke-width="6"/>
+            <path d="m111 82 31 24 31-24" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M111 110 132 92m41 18-21-18" fill="none" stroke="#bfeeff" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+      </div>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-channels" aria-label="Canales institucionales">
+          <article class="contact-channel">
+            <span class="contact-channel-icon contact-phone-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M14 6 7 10c-2 1-2 4-1 7 4 13 13 22 26 26 3 1 6 1 7-2l3-6-11-7-5 5c-5-3-9-7-12-12l5-5-5-10Z"/></svg></span>
+            <span class="contact-channel-copy"><strong>Teléfono</strong><span id="contactPhone">Información pendiente de publicación oficial</span></span>
+          </article>
+          <article class="contact-channel">
+            <span class="contact-channel-icon contact-mail-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="5" y="10" width="38" height="28" rx="4"/><path d="m7 13 17 14 17-14"/></svg></span>
+            <span class="contact-channel-copy"><strong>Correo institucional</strong><span id="contactEmail">Información pendiente de publicación oficial</span></span>
+          </article>
+          <article class="contact-channel">
+            <span class="contact-channel-icon contact-hours-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 13v12l9 6"/></svg></span>
+            <span class="contact-channel-copy"><strong>Horario de atención</strong><span id="contactHours">Consultar en el hospital</span></span>
+          </article>
+        </div>
+
+        <article class="contact-location">
+          <div class="contact-location-copy">
+            <span class="contact-location-label"><span aria-hidden="true">⌖</span> Ubicación</span>
+            <h3>Hospital San José de Chincha</h3>
+            <p><span class="contact-pin" aria-hidden="true">⌖</span><a class="contact-address-link" id="contactAddressLink" data-google-maps-link href="https://www.google.com/maps/search/?api=1&amp;query=Hospital+San+Jos%C3%A9+de+Chincha%2C+Av.+Alva+Maurtua+600%2C+Chincha+Alta%2C+Chincha%2C+Ica%2C+Per%C3%BA" target="_blank" rel="noopener noreferrer"><span id="contactAddress">Av. Alva Maurtua N.º 600, Chincha Alta, Chincha, Ica, Perú</span><span aria-hidden="true">↗</span></a></p>
+            <a class="contact-map-preview" id="contactMapLink" data-google-maps-link href="https://www.google.com/maps/search/?api=1&amp;query=Hospital+San+Jos%C3%A9+de+Chincha%2C+Av.+Alva+Maurtua+600%2C+Chincha+Alta%2C+Chincha%2C+Ica%2C+Per%C3%BA" target="_blank" rel="noopener noreferrer" aria-label="Abrir la ubicación del Hospital San José de Chincha en Google Maps">
+              <svg viewBox="0 0 420 150" role="img" aria-hidden="true">
+                <rect width="420" height="150" rx="20" fill="#eaf6fb"/>
+                <path d="M-10 33 91 9l83 27 88-28 168 31M-8 116l91-23 95 31 87-35 165 42M45-12l18 175M147-15l-14 177M267-12l15 174M361-10l-19 175" fill="none" stroke="#fff" stroke-width="15"/>
+                <path d="M-10 33 91 9l83 27 88-28 168 31M-8 116l91-23 95 31 87-35 165 42M45-12l18 175M147-15l-14 177M267-12l15 174M361-10l-19 175" fill="none" stroke="#c8dfec" stroke-width="2"/>
+                <path d="M24 12h45v26H24zM320 16h54v25h-54zM74 111h43v25H74zM326 102h60v28h-60z" fill="#c6eacb"/>
+                <path d="M210 38c-18 0-31 14-31 31 0 24 31 55 31 55s31-31 31-55c0-17-13-31-31-31Z" fill="#ed4751" stroke="#fff" stroke-width="5"/>
+                <circle cx="210" cy="69" r="10" fill="#fff"/>
+                <rect x="245" y="58" width="153" height="39" rx="18" fill="#fff" stroke="#d3e5ee" stroke-width="2"/>
+                <text x="260" y="82" fill="#153d72" font-size="13" font-weight="700">Hospital San José de Chincha</text>
+              </svg>
+              <span class="contact-map-open">Abrir en Google Maps <b aria-hidden="true">↗</b></span>
+            </a>
+          </div>
+          <img class="contact-location-photo" src="imagenes/hospital-web.jpg" alt="Hospital San José de Chincha" loading="lazy">
+        </article>
+      </div>
+
+      <div class="contact-institution">
+        <span aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="11" r="7"/><circle cx="9" cy="18" r="5"/><circle cx="39" cy="18" r="5"/><path d="M11 41v-8c0-8 5-14 13-14s13 6 13 14v8M2 40v-7c0-6 3-10 8-10 3 0 5 1 7 4m29 13v-7c0-6-3-10-8-10-3 0-5 1-7 4"/></svg></span>
+        <div><strong>UADI: Unidad de Apoyo a la Docencia e Investigación</strong><p>Brindando soporte a la formación, la docencia y la investigación en salud.</p></div>
+        <span class="contact-heartline" aria-hidden="true">⌁♡</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <img src="imagenes/logo-uadi.png" alt="UADI">
+      <p>Unidad de Apoyo a la Docencia e Investigación</p>
+    </div>
+
+    <p>© 2026 UADI - Hospital San José de Chincha</p>
+    <button id="btnLogin" class="btn-login footer-login" type="button" onclick="window.abrirLogin()">🔐 Acceso personal</button>
+  </footer>
+
+  <button class="chat-launcher" id="chatLauncher" type="button" aria-label="Abrir el asistente informativo de UADI" aria-expanded="false" aria-controls="uadiChat">
+    <span class="chat-launcher-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5c-10 0-18 7-18 16 0 5 3 10 8 13l-2 8 10-5h2c10 0 18-7 18-16S34 5 24 5Z"/><circle cx="16" cy="21" r="2"/><circle cx="24" cy="21" r="2"/><circle cx="32" cy="21" r="2"/></svg></span>
+    <span class="chat-launcher-label">Asistente UADI</span>
+    <span class="chat-launcher-status" aria-hidden="true"></span>
+  </button>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Volver al inicio" title="Volver al inicio">↑</button>
+
+
+<script type="module" src="./site-content.js"></script>
+<script type="module" src="./script.js"></script>
+  <script type="module" src="./chatbot.js"></script>
+</body>
+</html>

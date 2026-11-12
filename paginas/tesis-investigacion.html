@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b78">
+  <meta name="description" content="Requisitos para proyectos de investigación en el Hospital San José de Chincha - UADI.">
+  <title>Requisitos para Proyectos de Investigación | UADI</title>
+  <link rel="stylesheet" href="../estilos.css">
+  <style>
+    /* ── PÁGINA BASE ── */
+    .inv-page { min-height: 100vh; overflow-x: clip; background: #f0f8ff; color: #123b78; font-family: system-ui, -apple-system, sans-serif; }
+
+    /* ── HEADER ── */
+    .inv-header { position: sticky; z-index: 1000; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px clamp(16px,5vw,72px); background: #ffffffee; border-bottom: 2px solid #d0e9f8; backdrop-filter: blur(14px); box-shadow: 0 4px 18px #1065a815; }
+    .inv-brand { display: flex; align-items: center; gap: 13px; text-decoration: none; }
+    .inv-brand img:first-child { width: 54px; height: 54px; object-fit: contain; }
+    .inv-brand img:last-child { width: 165px; max-height: 60px; object-fit: contain; }
+    .inv-brand-div { width: 2px; height: 50px; background: #0e67b4; border-radius: 2px; }
+    .inv-back { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; border: 1.5px solid #c8e4f7; border-radius: 999px; background: #fff; color: #1766aa; font-size: .85rem; font-weight: 800; text-decoration: none; transition: background .2s, color .2s; }
+    .inv-back:hover { background: #e8f5ff; color: #0a4d8e; }
+
+    /* ── HERO ── */
+    .inv-hero { position: relative; isolation: isolate; overflow: hidden; padding: 50px clamp(18px,5vw,80px) 90px; background: linear-gradient(135deg, #0e3f8a 0%, #0877d2 55%, #0aaee6 100%); color: #fff; }
+    .inv-hero::after { position: absolute; bottom: -55px; left: -4%; right: -4%; height: 110px; background: #f0f8ff; border-radius: 50% 50% 0 0 / 65% 65% 0 0; content: ""; z-index: 1; }
+    .inv-hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 30px; max-width: 1300px; margin: auto; }
+    .inv-breadcrumb { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; font-size: .78rem; opacity: .82; }
+    .inv-breadcrumb a { color: #a8d8ff; font-weight: 700; text-decoration: none; }
+    .inv-breadcrumb a:hover { color: #fff; }
+    .inv-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border: 1.5px solid #ffffff44; border-radius: 999px; background: #ffffff1a; color: #d4f0ff; font-size: .75rem; font-weight: 800; letter-spacing: .08em; margin-bottom: 14px; }
+    .inv-hero h1 { margin: 0 0 14px; font-size: clamp(2rem,5vw,3.6rem); font-weight: 950; letter-spacing: -.04em; line-height: 1; }
+    .inv-hero h1 em { color: #7fe0ff; font-style: normal; }
+    .inv-hero p { max-width: 680px; margin: 0 0 20px; font-size: clamp(.95rem,1.4vw,1.1rem); line-height: 1.6; opacity: .9; }
+    .inv-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .inv-tag { padding: 5px 13px; border-radius: 999px; background: #ffffff22; border: 1px solid #ffffff33; color: #c8ecff; font-size: .78rem; font-weight: 700; }
+    .inv-hero-art { width: min(220px, 25vw); opacity: .18; }
+    .inv-hero-art svg { width: 100%; height: auto; fill: none; stroke: #fff; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+
+    /* ── TÍTULO DE SECCIÓN ── */
+    .inv-section-label { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 55px auto 32px; max-width: 700px; text-align: center; }
+    .inv-section-label::before, .inv-section-label::after { flex: 1; height: 2px; background: linear-gradient(90deg, transparent, #59b9e9); content: ""; }
+    .inv-section-label::after { background: linear-gradient(90deg, #59b9e9, transparent); }
+    .inv-section-label span { display: inline-flex; align-items: center; gap: 10px; padding: 10px 24px; border-radius: 999px; background: linear-gradient(100deg, #0aaee6, #0877d2); color: #fff; font-size: .92rem; font-weight: 900; letter-spacing: .06em; box-shadow: 0 8px 20px #0877d225; }
+
+    /* ── GRID DE REQUISITOS ── */
+    .inv-reqs { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; max-width: 1300px; margin: 0 auto; padding: 0 clamp(16px,4vw,60px) 15px; }
+    .inv-req { position: relative; display: flex; flex-direction: column; padding: 32px 22px 22px; border: 1.5px solid #c0e3fa; border-radius: 24px; background: #fff; box-shadow: 0 10px 28px #1065a812; transition: transform .2s, box-shadow .2s; }
+    .inv-req:hover { transform: translateY(-5px); box-shadow: 0 18px 38px #1065a820; }
+    .inv-num { position: absolute; top: -18px; left: 22px; display: grid; width: 44px; height: 44px; place-items: center; border: 3px solid #f0f8ff; border-radius: 50%; font-size: .82rem; font-weight: 950; color: #fff; box-shadow: 0 6px 14px #0877d233; }
+    .inv-num-1 { background: linear-gradient(145deg, #18c8ea, #0877d2); }
+    .inv-num-2 { background: linear-gradient(145deg, #22d3a7, #0d8f7a); }
+    .inv-num-3 { background: linear-gradient(145deg, #f97316, #dc4e0a); }
+    .inv-num-4 { background: linear-gradient(145deg, #a855f7, #7c3aed); }
+    .inv-num-5 { background: linear-gradient(145deg, #ec4899, #be185d); }
+    .inv-num-6 { background: linear-gradient(145deg, #eab308, #ca8a04); }
+    .inv-num-7 { background: linear-gradient(145deg, #3b82f6, #1d4ed8); }
+    .inv-req-icon { display: grid; width: 70px; height: 70px; place-items: center; border-radius: 20px; margin-bottom: 14px; }
+    .inv-req-icon svg { width: 44px; height: 44px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.4; }
+    .inv-req-ic-1 { background: linear-gradient(145deg,#dff8ff,#c5edff); color:#0877d2; }
+    .inv-req-ic-2 { background: linear-gradient(145deg,#d4fdf2,#b8f5e4); color:#0d8f7a; }
+    .inv-req-ic-3 { background: linear-gradient(145deg,#fff0e6,#ffdfc7); color:#dc4e0a; }
+    .inv-req-ic-4 { background: linear-gradient(145deg,#f3e8ff,#e9d5ff); color:#7c3aed; }
+    .inv-req-ic-5 { background: linear-gradient(145deg,#fce7f3,#fbcfe8); color:#be185d; }
+    .inv-req-ic-6 { background: linear-gradient(145deg,#fefce8,#fef08a); color:#ca8a04; }
+    .inv-req-ic-7 { background: linear-gradient(145deg,#dbeafe,#bfdbfe); color:#1d4ed8; }
+    .inv-req h3 { margin: 0 0 7px; color: #0d2f65; font-size: 1rem; font-weight: 900; line-height: 1.25; }
+    .inv-req p { margin: 0; color: #4a6b8f; font-size: .88rem; line-height: 1.55; }
+
+    /* ── HORARIO ── */
+    .inv-horario { max-width: 1300px; margin: 30px auto 15px; padding: 0 clamp(16px,4vw,60px); }
+    .inv-horario-card { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; padding: 26px 32px; border: 1.5px solid #a9dcff; border-radius: 28px; background: linear-gradient(110deg, #dff5ff, #f6fcff 55%, #d7efff); box-shadow: 0 10px 28px #1065a815; }
+    .inv-horario-icon { display: grid; width: 66px; height: 66px; place-items: center; border-radius: 20px; background: linear-gradient(145deg, #10aee5, #0872ce); color: #fff; box-shadow: 0 7px 16px #0877d230; }
+    .inv-horario-icon svg { width: 42px; height: 42px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.4; }
+    .inv-horario-card h2 { margin: 0 0 4px; color: #0d2f65; font-size: 1.2rem; font-weight: 900; }
+    .inv-horario-times { display: flex; flex-direction: column; gap: 5px; }
+    .inv-horario-time { display: flex; align-items: center; gap: 10px; padding: 7px 14px; border-radius: 12px; background: #fff; border: 1px solid #c5e5f8; color: #0d4f8e; font-size: .9rem; font-weight: 800; }
+    .inv-horario-time span { width: 8px; height: 8px; border-radius: 50%; background: #0aaee6; flex-shrink: 0; }
+    .inv-dias { display: flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 16px; background: linear-gradient(135deg, #0877d2, #0aaee6); color: #fff; font-weight: 900; font-size: .9rem; }
+    .inv-dias svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+
+    /* ── CONTACTO ── */
+    .inv-contact { max-width: 1300px; margin: 16px auto 40px; padding: 0 clamp(16px,4vw,60px); }
+    .inv-contact-card { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; padding: 22px 28px; border: 1.5px solid #c8e6fa; border-radius: 24px; background: #fff; box-shadow: 0 8px 22px #1065a810; }
+    .inv-contact-logo { display: flex; align-items: center; gap: 12px; }
+    .inv-contact-logo img { width: 110px; object-fit: contain; }
+    .inv-contact-info { display: flex; flex-wrap: wrap; gap: 14px; }
+    .inv-contact-item { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 14px; background: #f0f8ff; border: 1px solid #c5e5f8; color: #0d4f8e; font-size: .88rem; font-weight: 700; text-decoration: none; }
+    .inv-contact-item:hover { background: #dff4ff; }
+    .inv-contact-item svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; flex-shrink: 0; }
+
+    /* ── AVISO ── */
+    .inv-notice { display: flex; gap: 12px; align-items: flex-start; max-width: 1300px; margin: 0 auto 32px; padding: 16px 22px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 18px; color: #92400e; font-size: .82rem; line-height: 1.55; }
+    .inv-notice span { font-size: 1.3rem; flex-shrink: 0; margin-top: -2px; }
+    .inv-notice-wrap { max-width: 1300px; margin: 0 auto; padding: 0 clamp(16px,4vw,60px) 32px; }
+
+    /* ── FOOTER ── */
+    .inv-footer { display: flex; justify-content: space-between; gap: 15px; padding: 18px clamp(18px,5vw,72px); background: #0e4f8c; color: #e9f6ff; font-size: .8rem; }
+    .inv-footer a { color: inherit; font-weight: 800; text-decoration: none; }
+    .inv-footer a:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width: 900px) {
+      .inv-hero-art { display: none; }
+      .inv-hero-inner { grid-template-columns: 1fr; }
+      .inv-horario-card { grid-template-columns: auto 1fr; gap: 16px; padding: 20px 20px; }
+      .inv-horario-card > .inv-dias { grid-row: 1; grid-column: 1 / -1; }
+    }
+    @media(max-width: 600px) {
+      .inv-reqs { grid-template-columns: 1fr; }
+      .inv-horario-card { grid-template-columns: 1fr; gap: 14px; }
+      .inv-contact-card { flex-direction: column; align-items: flex-start; }
+      .inv-footer { flex-direction: column; align-items: center; text-align: center; }
+    }
+    @media(prefers-reduced-motion: reduce) { .inv-req { transition: none !important; } }
+  </style>
+</head>
+<body class="inv-page">
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <!-- HEADER -->
+  <header class="inv-header">
+    <a class="inv-brand" href="../index.html" aria-label="UADI, volver al inicio">
+      <img src="../imagenes/logo-hospital.png" alt="Hospital San José de Chincha" width="54" height="54">
+      <span class="inv-brand-div" aria-hidden="true"></span>
+      <img src="../imagenes/logo-uadi.png" alt="Unidad de Apoyo a la Docencia e Investigación" width="165" height="60">
+    </a>
+    <a class="inv-back" href="../index.html">← <span>Volver al portal</span></a>
+  </header>
+
+  <main id="contenido-principal" tabindex="-1">
+
+    <!-- HERO -->
+    <section class="inv-hero" aria-labelledby="inv-title">
+      <div class="inv-hero-inner">
+        <div class="inv-copy">
+          <nav class="inv-breadcrumb" aria-label="Ruta de navegación">
+            <a href="../index.html">Inicio</a><span aria-hidden="true"> › </span>
+            <a href="../index.html#areas">Áreas de UADI</a><span aria-hidden="true"> › </span>
+            <span aria-current="page">Investigación</span>
+          </nav>
+          <span class="inv-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/><path d="M11 7v4m0 2v.01"/></svg>
+            INVESTIGACIÓN CIENTÍFICA
+          </span>
+          <h1 id="inv-title">Requisitos para Proyectos de <em>Investigación</em></h1>
+          <p>Documentación necesaria para presentar tu proyecto de investigación en la UADI del Hospital San José de Chincha.</p>
+          <div class="inv-tags">
+            <span class="inv-tag">📚 Pregrado</span>
+            <span class="inv-tag">🎓 Posgrado</span>
+            <span class="inv-tag">📋 Reporte de caso</span>
+            <span class="inv-tag">📰 Publicación</span>
+          </div>
+        </div>
+        <div class="inv-hero-art" aria-hidden="true">
+          <svg viewBox="0 0 200 220" stroke-width="1.5">
+            <rect x="30" y="20" width="120" height="155" rx="12"/>
+            <path d="M55 55h70M55 75h50M55 95h38"/>
+            <circle cx="145" cy="145" r="40"/>
+            <path d="m168 168 25 25"/>
+            <path d="M133 145h24M145 133v24"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÍTULO -->
+    <div class="inv-section-label">
+      <span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        DOCUMENTACIÓN REQUERIDA
+      </span>
+    </div>
+
+    <!-- GRID DE REQUISITOS -->
+    <div class="inv-reqs" role="list">
+
+      <article class="inv-req" role="listitem">
+        <span class="inv-num inv-num-1" aria-hidden="true">01</span>
+        <div class="inv-req-icon inv-req-ic-1" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M13 5h16l8 8v30H13zM29 5v9h8M19 22h12M19 28h8"/><path d="M31 35c-2-2-2-5 0-7s5-2 7 0"/></svg>
+        </div>
+        <h3>Formulario de Trabajo de Investigación</h3>
+        <p>Emitido por la Unidad de Apoyo a la Docencia e Investigación <strong>y el Comité de Ética en Investigación</strong>, según corresponda.</p>
+      </article>
+
+      <article class="inv-req" role="listitem">
+        <span class="inv-num inv-num-2" aria-hidden="true">02</span>
+        <div class="inv-req-icon inv-req-ic-2" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><rect x="5" y="9" width="38" height="30" rx="5"/><circle cx="17" cy="20" r="5"/><path d="M9 33c1-6 15-6 16 0M29 18h8M29 24h8M29 30h6"/></svg>
+        </div>
+        <h3>Copia de DNI vigente</h3>
+        <p>Del/los <strong>investigador(es)</strong> participantes en el proyecto.</p>
+      </article>
+
+      <article class="inv-req" role="listitem">
+        <span class="inv-num inv-num-3" aria-hidden="true">03</span>
+        <div class="inv-req-icon inv-req-ic-3" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M12 5h19l7 8v30H12zM31 5v9h7M18 22h14M18 28h14M18 34h10"/><circle cx="34" cy="35" r="7" fill="transparent"/><path d="m31 35 2 2 4-5"/></svg>
+        </div>
+        <h3>Resolución o constancia de aprobación</h3>
+        <p>Del Proyecto de Investigación, emitida por la <strong>Universidad o Institución de procedencia</strong>.</p>
+      </article>
+
+      <article class="inv-req" role="listitem">
+        <span class="inv-num inv-num-4" aria-hidden="true">04</span>
+        <div class="inv-req-icon inv-req-ic-4" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><rect x="9" y="20" width="30" height="23" rx="4"/><path d="M15 20v-7a9 9 0 0 1 18 0v7M24 29v6"/></svg>
+        </div>
+        <h3>Carta de confidencialidad</h3>
+        <p><strong>Carta de confidencialidad y reserva de información</strong>.</p>
+      </article>
+
+      <article class="inv-req" role="listitem">
+        <span class="inv-num inv-num-5" aria-hidden="true">05</span>
+        <div class="inv-req-icon inv-req-ic-5" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><rect x="5" y="10" width="38" height="28" rx="4"/><path d="m7 13 17 14 17-14"/></svg>
+        </div>
+        <h3>Carta de presentación</h3>
+        <p>Emitida por la <strong>Universidad o institución de procedencia</strong> del investigador.</p>
+      </article>
+
+      <article class="inv-req" role="listitem">
+        <span class="inv-num inv-num-6" aria-hidden="true">06</span>
+        <div class="inv-req-icon inv-req-ic-6" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M5 13h16l4 5h18v23H5zM5 13V8h16l4 5"/><path d="M12 25h22M12 31h22M12 37h15"/></svg>
+        </div>
+        <h3>Copia del Proyecto de Investigación en físico</h3>
+        <p>Impreso por <strong>ambas caras</strong>, alineado con las prioridades institucionales establecidas.</p>
+      </article>
+
+      <article class="inv-req" role="listitem">
+        <span class="inv-num inv-num-7" aria-hidden="true">07</span>
+        <div class="inv-req-icon inv-req-ic-7" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><rect x="11" y="6" width="26" height="37" rx="4"/><circle cx="24" cy="19" r="6"/><path d="M16 35c1-7 15-7 16 0M17 10h14"/></svg>
+        </div>
+        <h3>Identificación de la Unidad de Docencia</h3>
+        <p>Es <strong>obligatorio portarla</strong> durante todo el desarrollo del proyecto de investigación.</p>
+      </article>
+
+    </div>
+
+    <!-- HORARIO DE ATENCIÓN -->
+    <div class="inv-horario">
+      <div class="inv-horario-card">
+        <div class="inv-horario-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="25" r="18"/><path d="M24 14v12l8 5"/></svg>
+        </div>
+        <div>
+          <h2>⏰ Horario de Atención</h2>
+          <div class="inv-horario-times">
+            <div class="inv-horario-time"><span aria-hidden="true"></span> 08:00 a.m. – 12:00 p.m.</div>
+            <div class="inv-horario-time"><span aria-hidden="true"></span> 02:00 p.m. – 04:00 p.m.</div>
+          </div>
+        </div>
+        <div class="inv-dias">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Lunes a Viernes
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="inv-contact">
+      <div class="inv-contact-card">
+        <div class="inv-contact-logo">
+          <img src="../imagenes/logo-uadi.png" alt="UADI">
+          <div>
+            <div style="font-weight:900;color:#0d2f65;font-size:.9rem;">UADI</div>
+            <div style="color:#4a6b8f;font-size:.78rem;">Unidad de Apoyo a la Docencia e Investigación</div>
+          </div>
+        </div>
+        <div class="inv-contact-info">
+          <a class="inv-contact-item" href="mailto:uadi.hsjch@gmail.com">
+            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
+            uadi.hsjch@gmail.com
+          </a>
+          <span class="inv-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Av. Abelardo Alva Maurtua N.º 600, 2.º piso – Hospital San José de Chincha
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AVISO -->
+    <div class="inv-notice-wrap">
+      <aside class="inv-notice" role="note">
+        <span aria-hidden="true">ℹ️</span>
+        <p><strong>Información referencial.</strong> Confirma los requisitos vigentes y el horario directamente con UADI antes de presentar tu expediente.</p>
+      </aside>
+    </div>
+
+  </main>
+
+  <footer class="inv-footer">
+    <span>UADI · Hospital San José de Chincha</span>
+    <a href="../index.html#inicio">Volver al inicio ↑</a>
+  </footer>
+  <script type="module" src="../chatbot.js"></script>
+</body>
+</html>

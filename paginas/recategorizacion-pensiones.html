@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b78">
+  <meta name="description" content="Requisitos de beneficio para recategorización en el pago de pensiones - UADI Hospital San José de Chincha.">
+  <title>Recategorización de Pensiones | UADI · Hospital San José de Chincha</title>
+  <link rel="stylesheet" href="../estilos.css">
+  <style>
+    /* ── PÁGINA BASE ── */
+    .pen-page { min-height: 100vh; overflow-x: clip; background: #f0f8ff; color: #123b78; font-family: system-ui, -apple-system, sans-serif; }
+
+    /* ── HEADER ── */
+    .pen-header { position: sticky; z-index: 1000; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px clamp(16px,5vw,72px); background: #ffffffee; border-bottom: 2px solid #d0e9f8; backdrop-filter: blur(14px); box-shadow: 0 4px 18px #1065a815; }
+    .pen-brand { display: flex; align-items: center; gap: 13px; text-decoration: none; }
+    .pen-brand img:first-child { width: 54px; height: 54px; object-fit: contain; }
+    .pen-brand img:last-child { width: 165px; max-height: 60px; object-fit: contain; }
+    .pen-brand-div { width: 2px; height: 50px; background: #0e67b4; border-radius: 2px; }
+    .pen-back { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; border: 1.5px solid #c8e4f7; border-radius: 999px; background: #fff; color: #1766aa; font-size: .85rem; font-weight: 800; text-decoration: none; transition: background .2s; }
+    .pen-back:hover { background: #e8f5ff; }
+
+    /* ── HERO ── */
+    .pen-hero { position: relative; isolation: isolate; overflow: hidden; padding: 50px clamp(18px,5vw,80px) 90px; background: linear-gradient(135deg, #083d8f 0%, #0d6ecc 55%, #0ba0dc 100%); color: #fff; }
+    .pen-hero::after { position: absolute; bottom: -55px; left: -4%; right: -4%; height: 110px; background: #f0f8ff; border-radius: 50% 50% 0 0 / 65% 65% 0 0; content: ""; z-index: 1; }
+    .pen-hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 30px; max-width: 1300px; margin: auto; }
+    .pen-breadcrumb { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; font-size: .78rem; opacity: .82; }
+    .pen-breadcrumb a { color: #a8d8ff; font-weight: 700; text-decoration: none; }
+    .pen-breadcrumb a:hover { color: #fff; }
+    .pen-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border: 1.5px solid #ffffff44; border-radius: 999px; background: #ffffff1a; color: #d4f0ff; font-size: .75rem; font-weight: 800; letter-spacing: .08em; margin-bottom: 14px; }
+    .pen-hero h1 { margin: 0 0 14px; font-size: clamp(2rem,5vw,3.6rem); font-weight: 950; letter-spacing: -.04em; line-height: 1.05; }
+    .pen-hero h1 em { color: #7fe0ff; font-style: normal; }
+    .pen-hero p { max-width: 680px; margin: 0 0 20px; font-size: clamp(.95rem,1.4vw,1.1rem); line-height: 1.6; opacity: .9; }
+    .pen-slogan { display: inline-block; padding: 8px 18px; border-radius: 12px; background: #ffffff15; border: 1px solid #ffffff30; font-size: .9rem; font-style: italic; color: #c8ecff; }
+    .pen-hero-art { width: min(200px, 22vw); opacity: .2; }
+    .pen-hero-art svg { width: 100%; height: auto; fill: none; stroke: #fff; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+
+    /* ── TÍTULO DE SECCIÓN ── */
+    .pen-section-label { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 55px auto 32px; max-width: 700px; text-align: center; }
+    .pen-section-label::before, .pen-section-label::after { flex: 1; height: 2px; background: linear-gradient(90deg, transparent, #59b9e9); content: ""; }
+    .pen-section-label::after { background: linear-gradient(90deg, #59b9e9, transparent); }
+    .pen-section-label span { display: inline-flex; align-items: center; gap: 10px; padding: 10px 24px; border-radius: 999px; background: linear-gradient(100deg, #0aaee6, #0877d2); color: #fff; font-size: .92rem; font-weight: 900; letter-spacing: .06em; box-shadow: 0 8px 20px #0877d225; }
+
+    /* ── GRID PRINCIPAL ── */
+    .pen-layout { display: grid; grid-template-columns: 1fr 380px; gap: 20px; max-width: 1300px; margin: 0 auto; padding: 0 clamp(16px,4vw,60px) 15px; }
+
+    /* ── REQUISITOS ── */
+    .pen-reqs-card { padding: 28px 24px; border: 1.5px solid #c0e3fa; border-radius: 24px; background: #fff; box-shadow: 0 10px 28px #1065a812; }
+    .pen-reqs-card h2 { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; color: #0d2f65; font-size: 1.15rem; font-weight: 900; }
+    .pen-reqs-card h2 svg { width: 28px; height: 28px; fill: none; stroke: #0877d2; stroke-width: 2.4; stroke-linecap: round; }
+    .pen-req-list { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .pen-req-item { display: grid; grid-template-columns: 60px 1fr; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; border: 1.5px solid; transition: transform .15s, box-shadow .15s; }
+    .pen-req-item:hover { transform: translateX(5px); box-shadow: 0 8px 20px #1065a815; }
+    .pen-req-item:nth-child(1) { background: linear-gradient(105deg,#dff8ff,#edf9ff); border-color: #a8dfff; }
+    .pen-req-item:nth-child(2) { background: linear-gradient(105deg,#d4fdf2,#e8fdf7); border-color: #9af0d8; }
+    .pen-req-item:nth-child(3) { background: linear-gradient(105deg,#fff0e6,#fff7f0); border-color: #ffd5b8; }
+    .pen-req-item:nth-child(4) { background: linear-gradient(105deg,#f3e8ff,#f9f0ff); border-color: #d9b8ff; }
+    .pen-req-item:nth-child(5) { background: linear-gradient(105deg,#fce7f3,#fef0f8); border-color: #f9b8d9; }
+    .pen-req-ic { display: grid; width: 54px; height: 54px; place-items: center; border-radius: 16px; }
+    .pen-req-item:nth-child(1) .pen-req-ic { background: linear-gradient(145deg,#c5edff,#9fd9ff); color:#0877d2; }
+    .pen-req-item:nth-child(2) .pen-req-ic { background: linear-gradient(145deg,#b8f5e4,#8eefd4); color:#0d8f7a; }
+    .pen-req-item:nth-child(3) .pen-req-ic { background: linear-gradient(145deg,#ffd5b8,#ffbe94); color:#dc4e0a; }
+    .pen-req-item:nth-child(4) .pen-req-ic { background: linear-gradient(145deg,#d9b8ff,#c598ff); color:#7c3aed; }
+    .pen-req-item:nth-child(5) .pen-req-ic { background: linear-gradient(145deg,#f9b8d9,#f595c5); color:#be185d; }
+    .pen-req-ic svg { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.6; }
+    .pen-req-text strong { display: block; color: #0d2f65; font-size: .95rem; font-weight: 900; margin-bottom: 2px; }
+    .pen-req-text span { color: #4a6b8f; font-size: .82rem; }
+
+    /* ── SIDEBAR BENEFICIOS + INFO ── */
+    .pen-sidebar { display: flex; flex-direction: column; gap: 18px; }
+
+    /* Beneficios */
+    .pen-benefits { padding: 24px 20px; border: 1.5px solid #c0e3fa; border-radius: 24px; background: linear-gradient(155deg, #0e3f8a, #0877d2); color: #fff; box-shadow: 0 10px 28px #0877d230; }
+    .pen-benefits h2 { display: flex; align-items: center; gap: 9px; margin: 0 0 18px; font-size: 1.1rem; font-weight: 900; }
+    .pen-benefits h2 svg { width: 26px; height: 26px; fill: none; stroke: #7fe0ff; stroke-width: 2.4; stroke-linecap: round; }
+    .pen-benefit { padding: 16px 18px; border-radius: 18px; background: #ffffff15; border: 1px solid #ffffff25; margin-bottom: 12px; }
+    .pen-benefit:last-child { margin-bottom: 0; }
+    .pen-benefit-top { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .pen-benefit-ic { display: grid; width: 44px; height: 44px; place-items: center; border-radius: 14px; background: #ffffff20; font-size: 1.5rem; flex-shrink: 0; }
+    .pen-benefit-title { font-size: .78rem; font-weight: 700; color: #c8ecff; letter-spacing: .05em; }
+    .pen-benefit-value { font-size: 1.5rem; font-weight: 950; color: #fff; line-height: 1; }
+    .pen-benefit-value em { color: #7fe0ff; font-style: normal; }
+    .pen-benefit-partner { display: inline-block; padding: 3px 10px; border-radius: 999px; background: #0aaee6; color: #fff; font-size: .72rem; font-weight: 900; letter-spacing: .08em; margin-top: 5px; }
+
+    /* Aplica a */
+    .pen-applies { padding: 18px 20px; border: 1.5px solid #c0e3fa; border-radius: 20px; background: #fff; box-shadow: 0 8px 20px #1065a810; }
+    .pen-applies h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; color: #0d2f65; font-size: .92rem; font-weight: 900; }
+    .pen-applies h3 svg { width: 22px; height: 22px; fill: none; stroke: #0877d2; stroke-width: 2.4; stroke-linecap: round; }
+    .pen-applies p { margin: 0; color: #3a6080; font-size: .88rem; line-height: 1.5; }
+
+    /* Contacto */
+    .pen-contact-box { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border: 1.5px solid #a9dcff; border-radius: 18px; background: linear-gradient(110deg,#dff5ff,#f0faff); text-decoration: none; color: #0d4f8e; font-size: .88rem; font-weight: 800; transition: background .2s; }
+    .pen-contact-box:hover { background: linear-gradient(110deg,#c5edff,#dff5ff); }
+    .pen-contact-box svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; flex-shrink: 0; }
+
+    /* Tagline */
+    .pen-tagline { padding: 16px 18px; border-radius: 18px; border: 1.5px solid #d0e9f8; background: #f8fcff; text-align: center; color: #0d4f8e; font-size: .9rem; font-style: italic; font-weight: 700; }
+
+    /* ── AVISO ── */
+    .pen-notice-wrap { max-width: 1300px; margin: 24px auto 32px; padding: 0 clamp(16px,4vw,60px); }
+    .pen-notice { display: flex; gap: 12px; align-items: flex-start; padding: 16px 22px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 18px; color: #92400e; font-size: .82rem; line-height: 1.55; }
+    .pen-notice span { font-size: 1.3rem; flex-shrink: 0; }
+
+    /* ── FOOTER ── */
+    .pen-footer { display: flex; justify-content: space-between; gap: 15px; padding: 18px clamp(18px,5vw,72px); background: #0e4f8c; color: #e9f6ff; font-size: .8rem; }
+    .pen-footer a { color: inherit; font-weight: 800; text-decoration: none; }
+    .pen-footer a:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width: 1000px) {
+      .pen-layout { grid-template-columns: 1fr; }
+      .pen-sidebar { display: grid; grid-template-columns: repeat(2, 1fr); }
+      .pen-benefits { grid-column: 1 / -1; }
+    }
+    @media(max-width: 650px) {
+      .pen-hero-art { display: none; }
+      .pen-hero-inner { grid-template-columns: 1fr; }
+      .pen-sidebar { grid-template-columns: 1fr; }
+      .pen-footer { flex-direction: column; align-items: center; text-align: center; }
+    }
+    @media(prefers-reduced-motion: reduce) {
+      .pen-req-item, .pen-contact-box { transition: none !important; }
+    }
+  </style>
+</head>
+<body class="pen-page">
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <!-- HEADER -->
+  <header class="pen-header">
+    <a class="pen-brand" href="../index.html" aria-label="UADI, volver al inicio">
+      <img src="../imagenes/logo-hospital.png" alt="Hospital San José de Chincha" width="54" height="54">
+      <span class="pen-brand-div" aria-hidden="true"></span>
+      <img src="../imagenes/logo-uadi.png" alt="Unidad de Apoyo a la Docencia e Investigación" width="165" height="60">
+    </a>
+    <a class="pen-back" href="../index.html">← <span>Volver al portal</span></a>
+  </header>
+
+  <main id="contenido-principal" tabindex="-1">
+
+    <!-- HERO -->
+    <section class="pen-hero" aria-labelledby="pen-title">
+      <div class="pen-hero-inner">
+        <div>
+          <nav class="pen-breadcrumb" aria-label="Ruta de navegación">
+            <a href="../index.html">Inicio</a><span> › </span>
+            <a href="../index.html#areas">Áreas de UADI</a><span> › </span>
+            <span aria-current="page">Pensiones</span>
+          </nav>
+          <span class="pen-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2l3.1 6.3L22 9.3l-5 4.9 1.2 6.9L12 18l-6.2 3.1L7 14.2 2 9.3l6.9-1z"/></svg>
+            BENEFICIO INSTITUCIONAL
+          </span>
+          <h1 id="pen-title">Requisitos de Beneficio<br><em>Recategorización</em><br>en el Pago de Pensiones</h1>
+          <p>Conoce los documentos necesarios para acceder al beneficio de recategorización en el pago de pensiones universitarias.</p>
+          <span class="pen-slogan">Comprometidos con tu bienestar y desarrollo 🤝</span>
+        </div>
+        <div class="pen-hero-art" aria-hidden="true">
+          <svg viewBox="0 0 200 220" stroke-width="1.5">
+            <rect x="40" y="20" width="120" height="155" rx="12"/>
+            <path d="m65 72 10 10 20-22m-20 48 10 10 20-22m-20 48 10 10 20-22"/>
+            <rect x="130" y="98" width="58" height="50" rx="8"/>
+            <text x="159" y="130" font-size="22" text-anchor="middle" fill="none" stroke="currentColor">%</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÍTULO -->
+    <div class="pen-section-label">
+      <span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>
+        REQUISITOS Y BENEFICIOS
+      </span>
+    </div>
+
+    <!-- LAYOUT PRINCIPAL -->
+    <div class="pen-layout">
+
+      <!-- REQUISITOS -->
+      <section aria-labelledby="pen-reqs-title">
+        <div class="pen-reqs-card">
+          <h2 id="pen-reqs-title">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            Documentos requeridos
+          </h2>
+          <ul class="pen-req-list">
+
+            <li class="pen-req-item">
+              <div class="pen-req-ic" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M11 10h27v34H11zM18 19h14M18 25h14M18 31h14M18 37h9M18 5h13v9H18z"/></svg>
+              </div>
+              <div class="pen-req-text">
+                <strong>FUT</strong>
+                <span>Ficha Única de Trámite</span>
+              </div>
+            </li>
+
+            <li class="pen-req-item">
+              <div class="pen-req-ic" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><rect x="5" y="9" width="38" height="30" rx="5"/><circle cx="17" cy="20" r="5"/><path d="M9 33c1-6 15-6 16 0M29 18h8M29 24h8M29 30h6"/></svg>
+              </div>
+              <div class="pen-req-text">
+                <strong>DNI</strong>
+                <span>Del trabajador o hijo beneficiario</span>
+              </div>
+            </li>
+
+            <li class="pen-req-item">
+              <div class="pen-req-ic" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M11 7h26v36H11zM17 15h14M17 21h14M17 28h14M17 35h7"/></svg>
+              </div>
+              <div class="pen-req-text">
+                <strong>Última boleta de pago</strong>
+                <span>Del trabajador solicitante</span>
+              </div>
+            </li>
+
+            <li class="pen-req-item">
+              <div class="pen-req-ic" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="m4 16 20-10 20 10-20 10L4 16Zm7 5v10c8 7 18 7 26 0V21"/></svg>
+              </div>
+              <div class="pen-req-text">
+                <strong>Último récord académico</strong>
+                <span>Solo para alumnos universitarios activos</span>
+              </div>
+            </li>
+
+            <li class="pen-req-item">
+              <div class="pen-req-ic" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M11 5h19l8 8v30H11zM30 5v9h8M17 22h15M17 28h15M17 34h12"/></svg>
+              </div>
+              <div class="pen-req-text">
+                <strong>Copia de ficha de matrícula</strong>
+                <span>Del estudiante beneficiario</span>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </section>
+
+      <!-- SIDEBAR -->
+      <aside class="pen-sidebar">
+
+        <!-- BENEFICIOS -->
+        <section class="pen-benefits" aria-labelledby="pen-benefits-title">
+          <h2 id="pen-benefits-title">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3L22 9.3l-5 4.9 1.2 6.9L12 18l-6.2 3.1L7 14.2 2 9.3l6.9-1z"/></svg>
+            Beneficios Disponibles
+          </h2>
+
+          <div class="pen-benefit">
+            <div class="pen-benefit-top">
+              <div class="pen-benefit-ic" aria-hidden="true">🏷️</div>
+              <div>
+                <div class="pen-benefit-title">BENEFICIO DE DESCUENTO</div>
+                <div class="pen-benefit-value">Hasta <em>25%</em></div>
+              </div>
+            </div>
+            <span class="pen-benefit-partner">UPSJB</span>
+          </div>
+
+          <div class="pen-benefit">
+            <div class="pen-benefit-top">
+              <div class="pen-benefit-ic" aria-hidden="true">🤝</div>
+              <div>
+                <div class="pen-benefit-title">DESCUENTO DE ESCALA</div>
+                <div class="pen-benefit-value">Por <em>Convenio</em></div>
+              </div>
+            </div>
+            <span class="pen-benefit-partner">UAI</span>
+          </div>
+        </section>
+
+        <!-- APLICA A -->
+        <div class="pen-applies">
+          <h3>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+            ¿A quién aplica?
+          </h3>
+          <p>Todos los trabajadores de la <strong>Unidad Ejecutora 401 Salud Chincha</strong>.</p>
+        </div>
+
+        <!-- CONTACTO -->
+        <a class="pen-contact-box" href="mailto:uadi.hsjch@gmail.com">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
+          uadi.hsjch@gmail.com
+        </a>
+
+        <!-- TAGLINE -->
+        <div class="pen-tagline">
+          "Comprometidos con tu bienestar y desarrollo"<br>
+          <small style="color:#6b8fa7;font-style:normal;font-size:.78rem;">Unidad de Apoyo a la Docencia e Investigación</small>
+        </div>
+
+      </aside>
+    </div>
+
+    <!-- AVISO -->
+    <div class="pen-notice-wrap">
+      <aside class="pen-notice" role="note">
+        <span aria-hidden="true">ℹ️</span>
+        <p><strong>Portal informativo.</strong> Consulta con UADI la presentación y evaluación de documentos. Los requisitos, descuentos y vigencia de convenios deben confirmarse antes de iniciar cualquier gestión.</p>
+      </aside>
+    </div>
+
+  </main>
+
+  <footer class="pen-footer">
+    <span>UADI · Hospital San José de Chincha</span>
+    <a href="../index.html#inicio">Volver al inicio ↑</a>
+  </footer>
+  <script type="module" src="../chatbot.js"></script>
+</body>
+</html>

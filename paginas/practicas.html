@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b78">
+  <meta name="description" content="Requisitos y proceso para Prácticas Preprofesionales en el Hospital San José de Chincha - UADI.">
+  <title>Prácticas Preprofesionales | UADI · Hospital San José de Chincha</title>
+  <link rel="stylesheet" href="../estilos.css">
+  <style>
+    .pp-page { min-height:100vh; overflow-x:clip; background:#f0f8ff; color:#123b78; font-family:system-ui,-apple-system,sans-serif; }
+
+    /* HEADER */
+    .pp-header { position:sticky; z-index:1000; top:0; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:10px clamp(16px,5vw,72px); background:#ffffffee; border-bottom:2px solid #d0e9f8; backdrop-filter:blur(14px); box-shadow:0 4px 18px #1065a815; }
+    .pp-brand { display:flex; align-items:center; gap:13px; text-decoration:none; }
+    .pp-brand img:first-child { width:54px; height:54px; object-fit:contain; }
+    .pp-brand img:last-child { width:165px; max-height:60px; object-fit:contain; }
+    .pp-brand-div { width:2px; height:50px; background:#0e67b4; border-radius:2px; }
+    .pp-back { display:inline-flex; align-items:center; gap:7px; padding:8px 18px; border:1.5px solid #c8e4f7; border-radius:999px; background:#fff; color:#1766aa; font-size:.85rem; font-weight:800; text-decoration:none; }
+    .pp-back:hover { background:#e8f5ff; }
+
+    /* HERO */
+    .pp-hero { position:relative; isolation:isolate; overflow:hidden; padding:50px clamp(18px,5vw,80px) 100px; background:linear-gradient(135deg,#0b3a8a 0%,#1070d4 55%,#22b8f0 100%); color:#fff; }
+    .pp-hero::after { position:absolute; bottom:-55px; left:-4%; right:-4%; height:110px; background:#f0f8ff; border-radius:50% 50% 0 0/65% 65% 0 0; content:""; z-index:1; }
+    .pp-hero-inner { position:relative; z-index:2; display:grid; grid-template-columns:1fr auto; align-items:center; gap:36px; max-width:1300px; margin:auto; }
+    .pp-breadcrumb { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:18px; font-size:.78rem; opacity:.85; }
+    .pp-breadcrumb a { color:#a8d8ff; font-weight:700; text-decoration:none; }
+    .pp-badge { display:inline-flex; align-items:center; gap:8px; padding:6px 16px; border:1.5px solid #ffffff44; border-radius:999px; background:#ffffff1a; color:#d4f0ff; font-size:.75rem; font-weight:800; letter-spacing:.08em; margin-bottom:14px; }
+    .pp-hero h1 { margin:4px 0 12px; font-size:clamp(2rem,5vw,3.6rem); font-weight:950; letter-spacing:-.04em; line-height:1; }
+    .pp-hero h1 em { color:#7fe0ff; font-style:normal; }
+    .pp-hero p { max-width:660px; margin:0 0 20px; font-size:clamp(.95rem,1.4vw,1.1rem); line-height:1.6; opacity:.92; }
+    .pp-tags { display:flex; flex-wrap:wrap; gap:8px; }
+    .pp-tag { padding:5px 13px; border-radius:999px; background:#ffffff22; border:1px solid #ffffff33; color:#c8ecff; font-size:.78rem; font-weight:700; }
+    .pp-art { width:min(200px,22vw); opacity:.18; }
+    .pp-art svg { width:100%; fill:none; stroke:#fff; stroke-linecap:round; stroke-linejoin:round; stroke-width:1.8; }
+
+    /* SECTION LABEL */
+    .pp-label { display:flex; align-items:center; justify-content:center; gap:15px; margin:52px auto 30px; max-width:720px; padding:0 16px; }
+    .pp-label::before,.pp-label::after { flex:1; height:2px; background:linear-gradient(90deg,transparent,#59b9e9); content:""; }
+    .pp-label::after { background:linear-gradient(90deg,#59b9e9,transparent); }
+    .pp-label span { display:inline-flex; align-items:center; gap:10px; padding:10px 24px; border-radius:999px; background:linear-gradient(100deg,#0aaee6,#0877d2); color:#fff; font-size:.92rem; font-weight:900; letter-spacing:.06em; box-shadow:0 8px 20px #0877d225; white-space:nowrap; }
+    .pp-label svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2.5; stroke-linecap:round; }
+
+    /* MAIN LAYOUT */
+    .pp-layout { display:grid; grid-template-columns:1fr 340px; gap:22px; max-width:1300px; margin:0 auto; padding:0 clamp(16px,4vw,60px); }
+
+    /* REQUISITOS */
+    .pp-reqs { padding:28px 24px; border:1.5px solid #c0e3fa; border-radius:24px; background:#fff; box-shadow:0 10px 28px #1065a812; }
+    .pp-reqs h2 { display:flex; align-items:center; gap:10px; margin:0 0 6px; color:#0d2f65; font-size:1.1rem; font-weight:900; }
+    .pp-reqs h2 svg { width:26px; height:26px; fill:none; stroke:#0877d2; stroke-width:2.4; stroke-linecap:round; }
+    .pp-reqs-intro { margin:0 0 20px; color:#4a6b8f; font-size:.88rem; padding:10px 14px; background:#f0f8ff; border-radius:12px; border-left:3px solid #0aaee6; }
+    .pp-req-list { display:flex; flex-direction:column; gap:14px; margin:0; padding:0; list-style:none; }
+    .pp-req-item { display:grid; grid-template-columns:70px 1fr; align-items:center; gap:14px; padding:16px 18px; border-radius:20px; border:1.5px solid; transition:transform .15s; }
+    .pp-req-item:hover { transform:translateX(5px); }
+    .pp-req-item:nth-child(1) { background:linear-gradient(105deg,#dff8ff,#edf9ff); border-color:#a8dfff; }
+    .pp-req-item:nth-child(2) { background:linear-gradient(105deg,#f3e8ff,#f9f0ff); border-color:#d9b8ff; }
+    .pp-req-item:nth-child(3) { background:linear-gradient(105deg,#d4fdf2,#e8fdf7); border-color:#9af0d8; }
+    .pp-req-ic { display:grid; width:60px; height:60px; place-items:center; border-radius:18px; }
+    .pp-req-item:nth-child(1) .pp-req-ic { background:linear-gradient(145deg,#c5edff,#9fd9ff); color:#0877d2; }
+    .pp-req-item:nth-child(2) .pp-req-ic { background:linear-gradient(145deg,#d9b8ff,#c598ff); color:#7c3aed; }
+    .pp-req-item:nth-child(3) .pp-req-ic { background:linear-gradient(145deg,#b8f5e4,#8eefd4); color:#0d8f7a; }
+    .pp-req-ic svg { width:36px; height:36px; fill:none; stroke:currentColor; stroke-linecap:round; stroke-linejoin:round; stroke-width:2.6; }
+    .pp-req-text strong { display:block; color:#0d2f65; font-size:1rem; font-weight:900; margin-bottom:3px; }
+    .pp-req-text span { color:#4a6b8f; font-size:.85rem; }
+    .pp-req-num { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:#0877d2; color:#fff; font-size:.7rem; font-weight:900; margin-bottom:4px; }
+
+    /* SIDEBAR */
+    .pp-side { display:flex; flex-direction:column; gap:18px; }
+
+    /* PROCESO */
+    .pp-steps { padding:24px 20px; border:1.5px solid #c0e3fa; border-radius:22px; background:#fff; box-shadow:0 10px 28px #1065a812; }
+    .pp-steps h2 { display:flex; align-items:center; gap:9px; margin:0 0 18px; color:#0d2f65; font-size:1rem; font-weight:900; }
+    .pp-steps h2 svg { width:22px; height:22px; fill:none; stroke:#0877d2; stroke-width:2.4; stroke-linecap:round; }
+    .pp-step { position:relative; display:flex; align-items:flex-start; gap:14px; padding-bottom:18px; }
+    .pp-step:not(:last-child)::after { position:absolute; left:18px; top:38px; bottom:0; width:2px; background:repeating-linear-gradient(180deg,#59b9e9 0 7px,transparent 7px 14px); content:""; }
+    .pp-step-num { display:grid; width:36px; height:36px; flex-shrink:0; place-items:center; border-radius:50%; background:linear-gradient(145deg,#10aee5,#0872ce); color:#fff; font-size:.82rem; font-weight:950; box-shadow:0 5px 12px #0877d230; }
+    .pp-step-body strong { display:block; color:#0d2f65; font-size:.92rem; font-weight:900; margin-bottom:2px; }
+    .pp-step-body p { margin:0; color:#4a6b8f; font-size:.82rem; line-height:1.45; }
+
+    /* IMPORTANTE */
+    .pp-important { padding:20px; border:1.5px solid #fde68a; border-radius:20px; background:linear-gradient(110deg,#fffbeb,#fef9e7); }
+    .pp-important h3 { display:flex; align-items:center; gap:8px; margin:0 0 12px; color:#92400e; font-size:.92rem; font-weight:900; }
+    .pp-imp-list { display:flex; flex-direction:column; gap:8px; margin:0; padding:0; list-style:none; }
+    .pp-imp-list li { display:flex; align-items:flex-start; gap:8px; color:#78350f; font-size:.84rem; line-height:1.45; }
+    .pp-imp-list li::before { content:"✓"; color:#d97706; font-weight:900; flex-shrink:0; margin-top:1px; }
+
+    /* HORARIO */
+    .pp-horario { display:flex; align-items:center; gap:16px; padding:18px 20px; border:1.5px solid #a9dcff; border-radius:20px; background:linear-gradient(110deg,#dff5ff,#f0faff); }
+    .pp-hor-ic { display:grid; width:52px; height:52px; flex-shrink:0; place-items:center; border-radius:16px; background:linear-gradient(145deg,#10aee5,#0872ce); color:#fff; }
+    .pp-hor-ic svg { width:32px; height:32px; fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; }
+    .pp-hor-info strong { display:block; color:#0d2f65; font-size:.88rem; font-weight:900; margin-bottom:4px; }
+    .pp-hor-times { display:flex; flex-direction:column; gap:3px; }
+    .pp-hor-time { color:#0877d2; font-size:.82rem; font-weight:700; }
+
+    /* CONTACTO */
+    .pp-contact { display:flex; align-items:center; gap:12px; padding:16px 18px; border:1.5px solid #a9dcff; border-radius:18px; background:#fff; text-decoration:none; color:#0d4f8e; font-size:.88rem; font-weight:800; }
+    .pp-contact svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; flex-shrink:0; }
+    .pp-contact:hover { background:#f0f8ff; }
+
+    /* INSCRIPCIÓN CTA */
+    .pp-cta { max-width:1300px; margin:28px auto 0; padding:0 clamp(16px,4vw,60px); }
+    .pp-cta-inner { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:20px; padding:24px 28px; border-radius:26px; background:linear-gradient(120deg,#0e3f8a,#0877d2); color:#fff; box-shadow:0 12px 28px #0877d230; }
+    .pp-cta-ic { display:grid; width:58px; height:58px; place-items:center; border-radius:18px; background:#ffffff22; font-size:1.9rem; }
+    .pp-cta h2 { margin:0; font-size:1.1rem; font-weight:900; }
+    .pp-cta p { margin:4px 0 0; color:#d4efff; font-size:.88rem; }
+    .pp-cta-actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .pp-btn { display:inline-flex; min-height:42px; align-items:center; gap:8px; padding:9px 20px; border-radius:999px; background:#fff; color:#0b4f96; font-size:.85rem; font-weight:900; text-decoration:none; white-space:nowrap; }
+    .pp-btn:hover { background:#e8f5ff; }
+    .pp-btn.ghost { background:transparent; border:1.5px solid #ffffff88; color:#fff; }
+    .pp-btn.ghost:hover { background:#ffffff18; }
+
+    /* NOTICE */
+    .pp-notice-wrap { max-width:1300px; margin:22px auto 32px; padding:0 clamp(16px,4vw,60px); }
+    .pp-notice { display:flex; gap:12px; align-items:flex-start; padding:16px 22px; background:#fffbeb; border:1px solid #fde68a; border-radius:18px; color:#92400e; font-size:.82rem; line-height:1.55; }
+
+    /* FOOTER */
+    .pp-footer { display:flex; justify-content:space-between; gap:15px; padding:18px clamp(18px,5vw,72px); background:#0e4f8c; color:#e9f6ff; font-size:.8rem; }
+    .pp-footer a { color:inherit; font-weight:800; text-decoration:none; }
+    .pp-footer a:hover { text-decoration:underline; }
+
+    @media(max-width:1000px){ .pp-layout{grid-template-columns:1fr} .pp-side{display:grid; grid-template-columns:repeat(2,1fr)} }
+    @media(max-width:650px){ .pp-hero-inner{grid-template-columns:1fr} .pp-art{display:none} .pp-side{grid-template-columns:1fr} .pp-cta-inner{grid-template-columns:auto 1fr} .pp-cta-actions{grid-column:1/-1} .pp-footer{flex-direction:column;align-items:center;text-align:center} }
+    @media(prefers-reduced-motion:reduce){ .pp-req-item{transition:none!important} }
+  </style>
+</head>
+<body class="pp-page">
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="pp-header">
+    <a class="pp-brand" href="../index.html" aria-label="UADI, volver al inicio">
+      <img src="../imagenes/logo-hospital.png" alt="Hospital San José de Chincha" width="54" height="54">
+      <span class="pp-brand-div" aria-hidden="true"></span>
+      <img src="../imagenes/logo-uadi.png" alt="Unidad de Apoyo a la Docencia e Investigación" width="165" height="60">
+    </a>
+    <a class="pp-back" href="../index.html">← <span>Volver al portal</span></a>
+  </header>
+
+  <main id="contenido-principal" tabindex="-1">
+    <section class="pp-hero" aria-labelledby="pp-title">
+      <div class="pp-hero-inner">
+        <div>
+          <nav class="pp-breadcrumb" aria-label="Ruta de navegación">
+            <a href="../index.html">Inicio</a><span> › </span>
+            <a href="../index.html#areas">Áreas de UADI</a><span> › </span>
+            <span aria-current="page">Prácticas Preprofesionales</span>
+          </nav>
+          <span class="pp-badge">🎓 DOCENCIA · FORMACIÓN PROFESIONAL</span>
+          <h1 id="pp-title">Prácticas <em>Preprofesionales</em></h1>
+          <p>Realiza tus prácticas en el Hospital San José de Chincha. Conoce los requisitos y el proceso para incorporarte a nuestra institución.</p>
+          <div class="pp-tags">
+            <span class="pp-tag">📚 Ciencias de la Salud</span>
+            <span class="pp-tag">🏥 Hospital San José de Chincha</span>
+            <span class="pp-tag">🎯 Formación práctica</span>
+          </div>
+        </div>
+        <div class="pp-art" aria-hidden="true">
+          <svg viewBox="0 0 200 220" stroke-width="1.5">
+            <path d="M40 180 20 120l60-80 60 80-20 60zM80 40v30M55 70l55 0"/>
+            <circle cx="80" cy="100" r="30"/>
+            <path d="M80 85v15h15"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <div class="pp-label"><span><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>DOCUMENTACIÓN Y PROCESO</span></div>
+
+    <div class="pp-layout">
+      <!-- REQUISITOS -->
+      <section aria-labelledby="pp-reqs-title">
+        <div class="pp-reqs">
+          <h2 id="pp-reqs-title">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            Documentos requeridos
+          </h2>
+          <p class="pp-reqs-intro">ⓘ Presenta los siguientes documentos en UADI para iniciar tu proceso de prácticas. Confirma vigencia antes de acercarte.</p>
+          <ul class="pp-req-list">
+            <li class="pp-req-item">
+              <div class="pp-req-ic" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><rect x="5" y="9" width="38" height="30" rx="5"/><circle cx="17" cy="20" r="5"/><path d="M9 33c1-6 15-6 16 0M29 18h8M29 24h8M29 30h6"/></svg>
+              </div>
+              <div class="pp-req-text">
+                <strong>Copia de DNI</strong>
+                <span>Documento Nacional de Identidad, legible y vigente.</span>
+              </div>
+            </li>
+            <li class="pp-req-item">
+              <div class="pp-req-ic" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><rect x="5" y="10" width="38" height="28" rx="4"/><path d="m7 13 17 14 17-14"/></svg>
+              </div>
+              <div class="pp-req-text">
+                <strong>Carta de presentación</strong>
+                <span>Emitida, firmada y sellada por tu universidad o institución de procedencia.</span>
+              </div>
+            </li>
+            <li class="pp-req-item">
+              <div class="pp-req-ic" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M11 10h27v34H11zM18 19h14M18 25h14M18 31h14M18 37h9M18 5h13v9H18z"/></svg>
+              </div>
+              <div class="pp-req-text">
+                <strong>FUT — Ficha Única de Trámite</strong>
+                <span>Debidamente completada con todos los datos requeridos.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SIDEBAR -->
+      <aside class="pp-side">
+
+        <!-- PASOS -->
+        <div class="pp-steps">
+          <h2>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            Pasos del proceso
+          </h2>
+          <div class="pp-step">
+            <span class="pp-step-num" aria-hidden="true">1</span>
+            <div class="pp-step-body">
+              <strong>📋 Reúne los documentos</strong>
+              <p>Prepara DNI, Carta de presentación y FUT completo.</p>
+            </div>
+          </div>
+          <div class="pp-step">
+            <span class="pp-step-num" aria-hidden="true">2</span>
+            <div class="pp-step-body">
+              <strong>🏢 Preséntate en UADI</strong>
+              <p>Acércate al segundo piso del Hospital San José de Chincha en horario de atención.</p>
+            </div>
+          </div>
+          <div class="pp-step">
+            <span class="pp-step-num" aria-hidden="true">3</span>
+            <div class="pp-step-body">
+              <strong>✅ Espera la evaluación</strong>
+              <p>UADI revisará tu expediente y te informará sobre la respuesta.</p>
+            </div>
+          </div>
+          <div class="pp-step">
+            <span class="pp-step-num" aria-hidden="true">4</span>
+            <div class="pp-step-body">
+              <strong>🎉 ¡Inicia tus prácticas!</strong>
+              <p>Una vez aprobado, coordina tu área de inicio con el equipo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- IMPORTANTE -->
+        <div class="pp-important">
+          <h3>⚠️ Recuerda</h3>
+          <ul class="pp-imp-list">
+            <li>La carta de presentación debe estar firmada y sellada por tu universidad.</li>
+            <li>Completa el FUT correctamente, sin borrones ni enmendaduras.</li>
+            <li>Presenta la documentación completa y legible.</li>
+            <li>Acércate en el horario de atención de UADI.</li>
+          </ul>
+        </div>
+
+        <!-- HORARIO -->
+        <div class="pp-horario">
+          <span class="pp-hor-ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="25" r="18"/><path d="M24 14v12l8 5"/></svg>
+          </span>
+          <div class="pp-hor-info">
+            <strong>⏰ Horario de Atención</strong>
+            <div class="pp-hor-times">
+              <span class="pp-hor-time">▸ Lunes a Viernes</span>
+              <span class="pp-hor-time">08:00 a.m. – 12:00 p.m.</span>
+              <span class="pp-hor-time">02:00 p.m. – 04:00 p.m.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACTO -->
+        <a class="pp-contact" href="mailto:uadi.hsjch@gmail.com">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
+          uadi.hsjch@gmail.com
+        </a>
+
+      </aside>
+    </div>
+
+    <!-- CTA ORIENTACIÓN -->
+    <div class="pp-cta">
+      <div class="pp-cta-inner">
+        <span class="pp-cta-ic" aria-hidden="true">💬</span>
+        <div>
+          <h2>¿Necesitas orientación sobre tu proceso?</h2>
+          <p>Acércate a UADI en el segundo piso del Hospital San José de Chincha o escríbenos para confirmar los requisitos vigentes.</p>
+        </div>
+        <div class="pp-cta-actions">
+          <a class="pp-btn" href="mailto:uadi.hsjch@gmail.com">✉ uadi.hsjch@gmail.com</a>
+          <a class="pp-btn ghost" href="../index.html#contacto">Ver contacto ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pp-notice-wrap">
+      <aside class="pp-notice" role="note">
+        <span aria-hidden="true">ℹ️</span>
+        <p><strong>Portal informativo.</strong> Confirma con UADI los requisitos vigentes antes de presentar tu documentación. Los requisitos pueden variar según tu carrera y universidad.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="pp-footer">
+    <span>UADI · Hospital San José de Chincha</span>
+    <a href="../index.html#inicio">Volver al inicio ↑</a>
+  </footer>
+  <script type="module" src="../chatbot.js"></script>
+</body>
+</html>

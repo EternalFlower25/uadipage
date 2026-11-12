@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestión de Investigación | UADI</title>
+
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+
+        <div class="logo-container">
+
+            <img src="../imagenes/logo-hospital.png"
+                 alt="Hospital San José"
+                 class="logo-hospital">
+
+            <img src="../imagenes/logo-uadi.png"
+                 alt="UADI"
+                 class="logo-uadi">
+
+        </div>
+
+        <nav class="nav-menu">
+
+            <a href="../index.html">Inicio</a>
+            <a href="practicas.html">Prácticas</a>
+            <a href="internado.html">Internado</a>
+            <a href="tesis-investigacion.html">Investigación</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO -->
+    <main class="admin-investigacion">
+
+        <section class="admin-hero">
+
+            <span class="mini-label">
+                UADI · ADMINISTRACIÓN
+            </span>
+
+            <h1>
+                Gestión de proyectos de investigación
+            </h1>
+
+            <p>
+                Consulta, revisa y actualiza el estado de los
+                proyectos de investigación registrados.
+            </p>
+
+        </section>
+
+
+        <!-- RESUMEN -->
+        <section class="admin-resumen">
+
+            <div class="admin-stat">
+                <span>📚</span>
+                <strong id="totalProyectos">
+                    0
+                </strong>
+                <small>
+                    Proyectos registrados
+                </small>
+            </div>
+
+            <div class="admin-stat">
+                <span>🟡</span>
+                <strong id="proyectosRevision">
+                    0
+                </strong>
+                <small>
+                    En revisión
+                </small>
+            </div>
+
+            <div class="admin-stat">
+                <span>🟢</span>
+                <strong id="proyectosAprobados">
+                    0
+                </strong>
+                <small>
+                    Aprobados
+                </small>
+            </div>
+
+        </section>
+
+
+        <!-- BUSCADOR -->
+        <section class="admin-buscador">
+
+            <input
+                type="text"
+                id="buscarProyectoAdmin"
+                placeholder="🔎 Buscar por código, investigador o proyecto..."
+            >
+
+        </section>
+
+
+        <!-- LISTADO -->
+        <section id="listaProyectosAdmin">
+
+            <!-- Los proyectos aparecerán aquí -->
+
+        </section>
+
+
+        <!-- SIN PROYECTOS -->
+        <section
+            id="sinProyectosAdmin"
+            style="
+                display:none;
+                text-align:center;
+                padding:50px;
+                background:#ffffff;
+                border-radius:22px;
+                border:1px solid #dceeff;
+            "
+        >
+
+            <div style="font-size:45px;">
+                📂
+            </div>
+
+            <h2 style="color:#073b7a;">
+                No hay proyectos registrados
+            </h2>
+
+            <p style="color:#66809c;">
+                Los proyectos registrados aparecerán
+                automáticamente en este panel.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <p>
+            © 2026 UADI · Unidad de Apoyo a la Docencia e Investigación
+        </p>
+
+    </footer>
+
+
+    <script type="module" src="../script.js"></script>
+
+</body>
+
+</html>
